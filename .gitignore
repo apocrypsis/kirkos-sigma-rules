@@ -1,1 +1,3 @@
 rsigma.exe
+sigma-env/*
+test_suite_results.json
