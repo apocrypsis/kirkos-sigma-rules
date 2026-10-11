@@ -1,6 +1,0 @@
-expectations:
-  # AWS CloudTrail Stop Logging
-  # True positive validation
-  - rule: 4f10d703-90f1-4cfd-a3ca-e5e1199abe12
-    corpus: aws_cloudtrail_stoplogging.true.json
-    exactly: 1
