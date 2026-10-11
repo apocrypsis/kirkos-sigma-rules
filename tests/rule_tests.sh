@@ -64,7 +64,6 @@ find ./tests -type f -name "*.expect.yaml" | while read -r expectation_file; do
     --rules ./rules/ \
     --corpus "${test_dir}/" \
     --expectations "$expectation_file" \
-    --unexpected fail \
     --output-format json > temp_res.json 2>/dev/null 
   
   # Merge this test's expectations array into the master report file
@@ -84,17 +83,15 @@ jq -r '
   | "Result: \($pass)/\($total) expectations passed (\($total - $pass) failed)."
 ' "$REPORT_FILE"
 
-# Print the failed tests
-echo 
-echo "FAILED TESTS:"
-jq -r '
-  .[] 
-  | select(.pass == false) 
-  | "  • Rule [\(.rule)] -> Expected \(.bound), but fired \(.actual) times."
-' "$REPORT_FILE"
-
-# Enforce an exit code if failures exist
+# If failures exist, print just the failed tests and exit with error code.
 if jq -e 'map(select(.pass == false)) | length > 0' "$REPORT_FILE" >/dev/null; then
+  echo 
+  echo "FAILED TESTS:"
+  jq -r '
+    .[] 
+    | select(.pass == false) 
+    | "  • Rule [\(.rule)] -> Expected \(.bound), but fired \(.actual) times."
+  ' "$REPORT_FILE"
   exit 1
 fi
 

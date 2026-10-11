@@ -1,10 +1,11 @@
-title: 'Stop AWS CloudTrail Logging'
+title: 'AWS CloudTrail Logging Stopped'
 id: '4f10d703-90f1-4cfd-a3ca-e5e1199abe12'
+author: '@apocrypsis'
 logsource:
   product: 'aws'
   service: 'cloudtrail'
 description: |
-  Detects when CloudTrail logging is stopped, 
+  This rule detects when CloudTrail logging is stopped, 
   which can be an indicator of malicious activity or an attempt to evade detection.
 detection:
   cloudtrail_disable_action:
