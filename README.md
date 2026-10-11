@@ -4,8 +4,6 @@ This repo houses a collection of Sigma rules for detecting adversarial actions w
 
 It serves as a personal laboratory for developing, testing, and refining detection logic.
 
-Logs obtained from:
-* [Splunk Attack Data](https://github.com/splunk/attack_data)
 
 ## Setup & Usage
 
@@ -15,3 +13,7 @@ Logs obtained from:
 
 > [!NOTE]
 > If you have downloaded rsigma as a standalone binary, you will need to include it in `PATH` to be able to run this script. If you don't want to modify `PATH` permanently, you can use `PATH=$PATH:. ./tests/rule_tests.sh` (assuming the rsigma binary is also in project root directory).
+
+## Log sources
+
+The logs used in this repo are from [Splunk Attack Data](https://github.com/splunk/attack_data).
