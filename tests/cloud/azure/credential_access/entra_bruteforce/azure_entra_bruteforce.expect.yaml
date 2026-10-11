@@ -1,0 +1,6 @@
+expectations:
+  # Entra Bruteforcing
+  # True positive validation
+  - rule: '329fd625-5495-4367-9c82-0da65ad1a9f7'
+    corpus: 'azure_entra_bruteforce.true.jsonl'
+    at_least: 1
