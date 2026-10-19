@@ -1,7 +1,6 @@
 title: 'Entra Failed Login Event'
 id: 'd66d121b-c1cb-4a17-8338-b7e40de23944'
 author: '@apocrypsis'
-name: 'entra_failed_login' # Rule reference; doesn't work with rsigma backtests. Only `id` field does.
 description: |
   This rule detects a single failed signin attempt to Entra.
   Intended to be used only as a base rule, for correlation. Should not be used on its own.
@@ -19,6 +18,7 @@ detection:
 ---
 title: 'Multiple Failed Login Attempts in Entra (Potential Bruteforcing)'
 id: '329fd625-5495-4367-9c82-0da65ad1a9f7'
+author: '@apocrypsis'
 description: |
   This rule detects repeated authentication failures for a single user account
   in a short duration of time.
@@ -32,5 +32,9 @@ correlation:
     - 'properties.userId' 
   timespan: 5m
   condition:
-    gte: 15
+    gte: 10
 level: 'medium'
+tags:
+  - 'attack.credential-access'
+  - 'attack.t1110'
+  - 'attack.t1110.001'
