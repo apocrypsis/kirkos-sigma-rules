@@ -7,7 +7,7 @@ It serves as a personal laboratory for developing, testing, and refining detecti
 
 ## Setup & Usage
 
-* Running unit tests to test the ruleset requires `rsigma`. Install it using instructions [here](https://github.com/timescale/rsigma).
+* Running unit tests to test the ruleset requires `rsigma`. Install it using instructions [here](https://github.com/timescale/rsigma). Make sure you are on v0.25.0 or higher.
 * `chmod u+x ./tests/rule_tests.sh`
 * Run the unit tests (from project root) using `./tests/rule_tests.sh`. 
 

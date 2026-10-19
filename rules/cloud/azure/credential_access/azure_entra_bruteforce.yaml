@@ -1,5 +1,6 @@
 title: 'Entra Failed Login Event'
 id: 'd66d121b-c1cb-4a17-8338-b7e40de23944'
+name: 'entra_failed_login_event'
 author: '@apocrypsis'
 description: |
   This rule detects a single failed signin attempt to Entra.
@@ -27,7 +28,7 @@ description: |
 correlation:
   type: 'event_count'
   rules:
-    - 'd66d121b-c1cb-4a17-8338-b7e40de23944' # entra_failed_login
+    - 'entra_failed_login_event' 
   group-by:
     - 'properties.userId' 
   timespan: 5m
