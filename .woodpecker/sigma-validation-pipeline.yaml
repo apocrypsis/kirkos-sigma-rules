@@ -7,7 +7,7 @@ pipeline:
       - apk add --no-cache git musl-dev bash
       
       # Install rsigma binary
-      - cargo install rsigma --version 0.23.0
+      - cargo install rsigma --version 0.25.0
       
       # The actual unit tests.
       # These are kept in a separate file to enable local testing as well.

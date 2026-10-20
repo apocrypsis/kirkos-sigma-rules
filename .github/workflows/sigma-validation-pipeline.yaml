@@ -22,7 +22,7 @@ jobs:
       # Install dependencies and rsigma.
       # GitHub's default runners include git, bash, and build tools automatically.
       - name: Install rsigma
-        run: cargo install rsigma --version 0.23.0
+        run: cargo install rsigma --version 0.25.0
 
       # Run your local shell script tests.
       - name: Run Tests
